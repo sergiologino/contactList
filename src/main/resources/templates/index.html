@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ContactList</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+<!--    <script type="text/javascript" th:src="@{/js/sample.js}"></script>-->
+</head>
+<body>
+<div>
+<h1>
+    Contact list   
+</h1>
+<table>
+    <thead>
+    <tr>
+    <th>ID</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>e-mail</th>
+    <th>Phone</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="contact: ${contacts}">
+        <td th:text="${contact.id}"></td>
+        <td th:text="${contact.firstName}"></td>
+        <td th:text="${contact.lastName}"></td>
+        <td th:text="${contact.email}"></td>
+        <td th:text="${contact.phone}"></td>
+        <td>
+            <a th:href="@{/contact/edit/{id}(id=${contact.id})}">Edit</a>
+            <a th:href="@{/contact/delete/{id}(id=${contact.id})}">Delete</a>
+            
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+<a href="/contact/create">Create contact</a>
+</div>
+</body>
+</html>
