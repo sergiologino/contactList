@@ -4,4 +4,7 @@ spring:
     username: postgres
     password: postgres
     hikari:
-      schema: tasks_schema
+      schema: contacts_schema
+      jdbc-url: localhost
+      username: postgres
+      password: postgres

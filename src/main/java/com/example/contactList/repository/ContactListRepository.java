@@ -16,6 +16,8 @@ public interface ContactListRepository {
 
     void deleteById(Long id);
 
+    void batchInsert(List<Contact> contacts);
+
 
 
 }

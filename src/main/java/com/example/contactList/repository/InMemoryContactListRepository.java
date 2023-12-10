@@ -54,4 +54,9 @@ public class InMemoryContactListRepository implements ContactListRepository{
         findById(id).ifPresent(contacts::remove);
 
     }
+
+    @Override
+    public void batchInsert(List<Contact> contacts) {
+        this.contacts.addAll(contacts);
+    }
 }

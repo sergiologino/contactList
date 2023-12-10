@@ -15,4 +15,6 @@ public interface ContactListService {
     Contact update(Contact contact);
 
     void deleteById(Long id);
+
+    void batchInsert(List<Contact> contacts);
 }

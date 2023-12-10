@@ -46,4 +46,11 @@ public class ContactListServiceImpl implements ContactListService{
         contactListRepository.deleteById(id);
 
     }
+
+    @Override
+    public void batchInsert(List<Contact> contacts) {
+        log.debug("Call batchInsert in ContactListServiceImpl");
+
+        contactListRepository.batchInsert(contacts);
+    }
 }
